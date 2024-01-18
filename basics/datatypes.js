@@ -31,9 +31,9 @@
 
 
 // checking data type
-// console.log(typeof null);             //object
-// console.log(typeof undefined);        //undefined
-// console.log(typeof String);           //function
+console.log(typeof null);             //object
+console.log(typeof undefined);        //undefined
+console.log(typeof String);           //function
 
 
 //  Conversion of data types
