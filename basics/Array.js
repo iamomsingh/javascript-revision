@@ -1,6 +1,6 @@
 //Deceleration of array 
 
-const arr = [1,2,3,4,5,'shaktiman'];         // literal array declaration
+const arr = [1,2,3,4,5,'shaktiman'];         // literal- array declaration
 const arr1 = new Array(3,4,5,6,7,8);         //constructor-declaration of array abj 
 
 //Array makes shallow copy - means same reference points (change the value at main array)
