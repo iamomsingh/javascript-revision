@@ -32,7 +32,7 @@ Q. difference between slice & substring
 const str = 'hello i am om'   // it is string primitive it does not have any method 
 
 
-const name = new String('om singh');          //here string as a obj.
+const name = new String('om singh');          //here string as a object string.
 
 console.log(`Hello my name is ${name}`);
 
