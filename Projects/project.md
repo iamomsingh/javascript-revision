@@ -5,7 +5,7 @@
 
 # Solution code
 
-## Project-1
+## Project-1 [Change Background Color]
 
 ```Javascript
 console.log('om singh');
@@ -42,7 +42,7 @@ buttons.forEach((button) => {
 
 ```
 
-## Project-2
+## Project-2 [BMI Calculator]
 
 ```javascript
 const form = document.querySelector('form');
@@ -66,5 +66,20 @@ form.addEventListener('submit', function (e) {
     results.innerHTML = `<span>${bmi}</span>`;
   }
 });
+
+```
+
+
+## Project-3 [Digital clock]
+
+```javascript
+
+const clock = document.getElementById('clock');
+
+let date = new Date();
+setInterval( () => {
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+},1000);
 
 ```
