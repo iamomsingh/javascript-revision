@@ -1,3 +1,7 @@
+//What is PRomise
+
+//-> A Promise is an Object, represents the eventual completion or failure of an asynchronous operation and its resulting value. It allows you to  handle asynchronous operations more easily by providing a way to execute code once an asynchronous task is completed, whether it's successful or not.
+
 //**************************How to create Promise************************************************************************** */
 
 //1. First way to create promise
@@ -145,6 +149,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
 /*
 Q. what is Fetch?
 
+-> fetch basically start process of fetching resources from network, server.
+
+-> fetch() is a modern JavaScript API for making network requests, such as fetching resources from a server. It provides a more powerful and flexible way to work with HTTP requests compared to traditional methods like XMLHttpRequest. The fetch() function returns a Promise that resolves to the Response object representing the response to the request.
+
 -> The Fetch API provides an interface for fetching resources (including across the network) 
 -> fetch is a promise object, which return promise.
 -> It does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
@@ -186,3 +194,32 @@ Q. Inside of fetch.
     after thar data send the value to the variable "response".
 
 */
+
+//extra
+
+//Promise.all()
+
+//The Promise.all() method takes an array of Promises and returns a single Promise that resolves when all of the Promises in the array have resolved, or rejects with the reason of the first promise that rejects.
+
+const promise1 = Promise.resolve(1);
+const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 2));
+const promise3 = new Promise((_, reject) => setTimeout(reject, 200, "Error"));
+
+Promise.all([promise1, promise2, promise3])
+  .then((values) => {
+    console.log(values); // Output: [1, 2] (if all promises resolve)
+  })
+  .catch((error) => {
+    console.error(error); // Output: Error (if any promise rejects)
+  });
+
+//PRomise.race();
+
+//The Promise.race() method takes an array of Promises and returns a Promise that resolves or rejects as soon as one of the Promises in the array resolves or rejects.
+
+const promise4 = new Promise((resolve) => setTimeout(resolve, 100, "First"));
+const promise5 = new Promise((resolve) => setTimeout(resolve, 200, "Second"));
+
+Promise.race([promise4, promise5]).then((value) => {
+  console.log(value); // Output: First (since promise1 resolves first)
+});

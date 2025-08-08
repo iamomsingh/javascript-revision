@@ -4,6 +4,7 @@
 **Javascript**  
 >javascript is a synchronous language ( run code sequentially).  
 it has a single thread.
+> javascript always come with runtime environment(nodejs, window..)
 
 ***
 

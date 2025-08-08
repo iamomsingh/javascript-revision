@@ -36,14 +36,14 @@
 
 //**********************selecting single Element***********************************************************************************/
         const title = document.getElementById('title');
-        title.getAttribute('id');
+        console.log(title.getAttribute('id'));
         title.setAttribute('class', 'test');
         title.style.backgroundColor = 'green';
         title.style.borderRadius = '15px';
-        title.textContent
+        console.log(title.textContent);
 
 
- //*********************************** Nodelist *************************************************************************************/ 
+ //*********************************** Nodelist[foreEach] *****************************************************************************/ 
 
         const heading = document.querySelectorAll('h2');
         console.log(heading);        //nodeList then use forEach method.

@@ -29,19 +29,18 @@
             // onclick = "alert('owl clicked');
 
   //2. onclick on selection of element      - this is also not feasible they not provide propagation feature.
-    // document.getElementById('owl').onclick = function(){
-    //     alert("owl clicked")
-    // }
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
 
   //  3. By using Event Listener
 
     document.getElementById('owl').addEventListener('click', function(e){
         console.log(e);
         console.log("owl clicked");
-        e.stopPropagation()
+        // e.stopPropagation()
     }, false);
 
-    
     document.getElementById('images').addEventListener('click', (e) => {
         console.log("clicked inside the ul");
     }, false)
@@ -74,7 +73,6 @@
     // target, toElement, srcElement, currentTarget,
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
-   
     
     document.querySelector('#images').addEventListener('click', function(e){
         console.log(e.target)
@@ -84,10 +82,8 @@
             let removeIt = e.target.parentNode
             removeIt.remove()
         }
-    
-        
     })
-    
+
     //removeIt.parentNode.removeChild(removeIt)
 </script>
 </html>

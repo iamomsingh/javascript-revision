@@ -6,27 +6,26 @@
     <title>Browser API</title>
 </head>
 <body>
-    <h1>simple project on setTimeout</h1>
+    <h1 id="h1">simple project on setTimeout</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 
     <script>
 
+        let changetxt;
         const changeText = () => {
-            document.querySelector('h1').innerHTML = "Om Learn Fast...."
+            document.querySelector('#h1').innerHTML = "Om Learn Fast...."
         }
 
 
         document.querySelector('#start').addEventListener('click', (e) => {
-            const changebtn = setTimeout(changeText, 3000);
+            changetxt = setTimeout(changeText, 1000);
             console.log('Started');
+        })
 
-            document.querySelector('#stop').addEventListener('click', (e) => {
-            clearInterval(changebtn);
+        document.querySelector('#stop').addEventListener('click', (e) => {
+            clearInterval(changetxt);
             console.log('Stopped');
-
-
-            })
         })
 
     </script>

@@ -70,3 +70,92 @@ let sc2 = 200;
 let sc3 = 300;
 
 console.log(Array.of(sc1, sc2, sc3)); //forming new array from group of element & element is anyting.
+
+// Array more method
+
+/*
+at: function at()
+​​
+concat: function concat()
+​​
+constructor: function Array()
+​​
+copyWithin: function copyWithin()
+​​
+entries: function entries()
+​​
+every: function every()
+​​
+fill: function fill()
+​​
+filter: function filter()
+​​
+find: function find()
+​​
+findIndex: function findIndex()
+​​
+findLast: function findLast()
+​​
+findLastIndex: function findLastIndex()
+​​
+flat: function flat()
+​​
+flatMap: function flatMap()
+​​
+forEach: function forEach()
+​​
+includes: function includes()
+​​
+indexOf: function indexOf()
+​​
+join: function join()
+​​
+keys: function keys()
+​​
+lastIndexOf: function lastIndexOf()
+​​
+length: 0
+​​
+map: function map()
+​​
+pop: function pop()
+​​
+push: function push()
+​​
+reduce: function reduce()
+​​
+reduceRight: function reduceRight()
+​​
+reverse: function reverse()
+​​
+shift: function shift()
+​​
+slice: function slice()
+​​
+some: function some()
+​​
+sort: function sort()
+​​
+splice: function splice()
+​​
+toLocaleString: function toLocaleString()
+​​
+toReversed: function toReversed()
+​​
+toSorted: function toSorted()
+​​
+toSpliced: function toSpliced()
+​​
+toString: function toString()
+​​
+unshift: function unshift()
+​​
+values: function values()
+​​
+with: function with()
+​​
+Symbol(Symbol.iterator): function values()
+​​
+Symbol(Symbol.unscopables): Object { at: true, copyWithin: true, entries: true, … }
+
+*/
