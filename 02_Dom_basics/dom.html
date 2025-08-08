@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Learning</title>
+    <style>
+        .bg-color{
+            background-color: black;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-color">
+    <div>
+        <h1 class="heading" id="title">
+            Dom Learning From basics
+        </h1>
+        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto!</h2>
+        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto!</h2>
+        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, iusto!</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, deleniti.</p>
+        <div class="parent">
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thrusday</div>
+        </div>
+        <ul class="languages">
+            <li>Java</li>
+        </ul>
+    </div>
+
+    <script>
+
+//**********************selecting single Element***********************************************************************************/
+        const title = document.getElementById('title');
+        console.log(title.getAttribute('id'));
+        title.setAttribute('class', 'test');
+        title.style.backgroundColor = 'green';
+        title.style.borderRadius = '15px';
+        console.log(title.textContent);
+
+
+ //*********************************** Nodelist[foreEach] *****************************************************************************/ 
+
+        const heading = document.querySelectorAll('h2');
+        console.log(heading);        //nodeList then use forEach method.
+        heading[0].style.backgroundColor = 'pink';
+        heading.forEach((hea) => {
+            hea.style.backgroundColor = 'red';
+            hea.style.marginInline = '5em';
+            hea.style.borderRadius = '15px';
+            hea.style.paddingBlock = '5px';
+        })
+
+
+// ***************************HTML collection*****************************************************************************************/
+
+         //if html collection come then forst we have to convert it to a Array.
+        const allday = document.getElementsByClassName('parent');
+        console.log(allday);       //html colection not array so forEah not work here.
+        const convertedArray = Array.from(allday);
+        convertedArray.map( (day) => {
+            console.log(day.textContent);
+        })
+
+
+
+//*********************** selecting through parent to children**************************************************************/
+
+        const parent = document.querySelector('.parent');
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1].innerHTML);
+
+        for(let i=0; i < parent.children.length ; i++) {
+            console.log(parent.children[i].innerHTML);
+            parent.children[i].margin = '5px'
+        }
+
+        parent.children[1].style.color = 'orange';
+        parent.style.margin = '50px'
+        console.log(parent.firstElementChild.innerHTML);
+        console.log(parent.lastElementChild.innerHTML);
+
+//******************** selecting by children to parent ************************************************************/
+
+        const dayone = document.querySelector('.day');
+        console.log(dayone);
+        console.log(dayone.parentElement);
+        console.log(dayone.nextElementSibling);
+
+
+
+//********************* creating new element ************************************************************************************/
+
+        const div = document.createElement('div');
+        div.className = 'main';
+        div.id = Math.floor((Math.random() *10) + 1);
+        div.setAttribute('title', "generate title");
+        div.style.backgroundColor = "green";
+        div.style.padding = '12px';
+        div.style.margin = '30px'
+        div.style.borderRadius = '10px'
+        // div.innerText = 'Learn fast'           //this overide the value [prifessioinaly not use]
+        const addText = document.createTextNode('my first created node');
+        div.appendChild(addText);
+
+        document.body.appendChild(div);
+
+//**************************Edit & remove through function ***************************************************************************/
+    function addLanguage(language) {
+        const li = document.createElement('li');
+        li.innerHTML = `${language}`;
+        document.querySelector('.languages').appendChild(li)
+    } 
+    addLanguage('Python');
+    addLanguage('javascript');
+
+
+    function optimizedLanguage(language){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(language));
+        document.querySelector('.languages').appendChild(li)
+    }
+    optimizedLanguage('HTML');
+    optimizedLanguage('CSS');
+
+
+
+    //************Edit element ****************
+
+    // 1. innerHTML
+    const thirdLang = document.querySelector('li:nth-child(3)');   //select to whome to edit
+    thirdLang.innerHTML = 'MOJO';
+    
+
+    //2. create new Elemet - replaceWith
+    const fourthLang = document.querySelector('li:nth-child(4)');
+    const newli = document.createElement('li');
+    newli.textContent = 'Redux';
+    fourthLang.replaceWith(newli);
+
+
+    //3. outerHTML
+    const firstdLang = document.querySelector('li:first-child');
+    firstdLang.outerHTML = '<li>Javascript </li>';
+
+
+    //****************Remove element***********************/
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+
+    </script>
+</body>
+</html> 

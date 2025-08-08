@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser API</title>
+</head>
+<body>
+    <h1 id="h1">simple project on setTimeout</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+
+        let changetxt;
+        const changeText = () => {
+            document.querySelector('#h1').innerHTML = "Om Learn Fast...."
+        }
+
+
+        document.querySelector('#start').addEventListener('click', (e) => {
+            changetxt = setTimeout(changeText, 1000);
+            console.log('Started');
+        })
+
+        document.querySelector('#stop').addEventListener('click', (e) => {
+            clearInterval(changetxt);
+            console.log('Stopped');
+        })
+
+    </script>
+</body>
+</html>
